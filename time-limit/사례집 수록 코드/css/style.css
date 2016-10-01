@@ -1,0 +1,190 @@
+@charset	"utf-8";
+/*------------------------------------*\
+	Reset CSS
+		- based Eric-Meyer's CSS Reset
+\*------------------------------------*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,main,hgroup,menu,nav,section,summary,time,mark,audio,video{
+	background:transparent;
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	max-width:100%
+}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{
+	display:block
+}
+body{
+	background-color:#FAFAFA;
+	line-height:1.8;
+	font-family:'Apple SD Gothic Neo','Apple Gothic','나눔고딕','Nanum Gothic','맑은 고딕','Malgun Gothic';
+	font-size:100%
+}
+ul,ol{
+	margin-left:1.75rem
+}
+ol ol{
+	list-style-type:lower-roman
+}
+ol ol ol{
+	list-style-type:lower-alpha
+}
+blockquote,q{
+	quotes:none
+}
+pre{
+	display:inline-block
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:'';
+	content:none
+}
+a{
+	color:inherit
+}
+ins{
+	color:#000;
+	text-decoration:none
+}
+del{
+	text-decoration:line-through
+}
+abbr[title],dfn[title]{
+	border-bottom:1px dotted;
+	cursor:help
+}
+table{
+	table-layout:fixed;
+	border-collapse:collapse;
+	border-spacing:0
+}
+table,tr,th,td{
+	border-collapse:collapse;
+	border-spacing:0;
+	empty-cells:show
+}
+input,select{
+	margin:0;
+	padding:0;
+	vertical-align:middle
+}
+button{
+	font:inherit;
+	cursor:pointer
+}
+img{
+	max-width:100%
+}
+img[height]{
+	height:auto !important
+}
+em{
+	margin-right:.5em
+}
+.hidden-accessible{
+	overflow:hidden !important;
+	clip:rect(1px,1px,1px,1px) !important;
+	position:absolute !important;
+	width:1px !important;
+	height:1px !important
+}
+.clearfix:after{
+	clear:both;
+	content:'';
+	display:table;
+	height:0;
+	overflow:hidden;
+	visibility:hidden
+}
+.fix-justify:before{
+	content:'';
+	display:inline-block;
+	width:100%;
+	height:0;
+	overflow:hidden
+}
+html,body{
+	height:100%;
+	min-height:100%
+}
+body{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:1em
+}
+/*------------------------------------*\
+	Example's Layout
+\*------------------------------------*/
+.wrap{
+	position:relative;
+	margin-top:1em;
+	width:900px;
+	height:80%
+}
+.contents{
+	margin-top:2em;
+	padding:1em;
+	border:1px solid #ccc;
+	height:80%;
+}
+.layerpop{
+	display:none;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-150px;
+	margin-left:-350px;
+	width:700px;
+	height:300px;
+	border:2px solid #e5e5e5;
+	background-color:#fff;
+	border-bottom:5px solid #00a0f3;
+	z-index:10;
+}
+.pop-inner{
+	padding:57px 0 0 340px;
+	background:#fff url(../images/bg_logout.gif) 80px 60px no-repeat;
+	width:270px;
+}
+.pop-inner #pop-title{
+	display:block;
+	margin-bottom:7px;
+	height:28px
+}
+.pop-inner strong{
+	display:inline-block;
+	margin-bottom:14px;
+	font-size:18px;
+	font-weight:bold;
+	color:#333
+}
+.pop-inner strong em{
+	font-style:normal;
+	color:#ff4b2a
+}
+.pop-inner p{
+	margin:15px 0;
+	font-size:14px;
+	line-height:1.3;
+	white-space:pre-line;
+}
+.pop-inner button{
+	display:inline-block;
+	overflow:hidden;
+	margin:0;
+	padding:0 15px;
+	border:1px solid #ccc;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	background-color:#fff;
+	text-align:center;
+	font-size:14px;
+	color:#181818;
+}
+.pop-inner button.extend{
+	background-color:#00a0f3;
+	border-color:#00a0f3;
+	color:#FFF;
+}

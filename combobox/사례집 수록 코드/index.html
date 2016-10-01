@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Combobox</title>
+	<link rel="stylesheet" href="http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css">
+	<link rel="stylesheet" crossorigin="anonymous" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<!-- demo start -->
+	<div class="ui-combobox-wrapper" id="cb-travel-dest" role="group">
+		<label class="ui-combobox-label" for="cb-travel">도착지</label>
+		<input aria-activedescendant="" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-owns="cb-travel-list" aria-readonly="true" class="ui-combobox" id="cb-travel" placeholder="도착 지역 선택" readonly="true" role="combobox" type="text">
+		<button aria-label="지역 선택 목록 열기" class="ui-combobox-button" type="button">
+			<span aria-hidden="true" class="fa fa-angle-down"></span>
+		</button>
+		<ul aria-hidden="true" class="ui-combobox-list" id="cb-travel-list" role="listbox">
+			<li class="ui-combobox-list-option" id="cb-travel-option-01" role="option">일본</li>
+			<li class="ui-combobox-list-option" id="cb-travel-option-02" role="option">중국</li>
+			<li class="ui-combobox-list-option" id="cb-travel-option-03" role="option">동남아시아/인도</li>
+			<li class="ui-combobox-list-option" id="cb-travel-option-04" role="option">미주(북/남미)</li>
+			<li class="ui-combobox-list-option" id="cb-travel-option-05" role="option">유럽</li>
+			<li class="ui-combobox-list-option" id="cb-travel-option-06" role="option">대양주/괌</li>
+			<li class="ui-combobox-list-option" id="cb-travel-option-07" role="option">러시아/몽골/중앙아시아</li>
+			<li class="ui-combobox-list-option" id="cb-travel-option-08" role="option">중동/아프리카</li>
+		</ul>
+	</div><!--// demo end -->
+</body>
+</html>

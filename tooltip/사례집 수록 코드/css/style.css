@@ -1,0 +1,55 @@
+@charset "utf-8";
+/*! style.css © yamoo9.net, 2016 */
+/* demo basic ------------------------------------------------------- */
+body {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	min-height: 65vh;
+	margin: 5em 10em;
+	font: 100%/1.5 "Spoqa Han Sans", Sans-Serif;
+	color: #212121;
+	letter-spacing: -0.015em;
+}
+::-moz-selection {
+	background: #3fd4cc;
+	color: #fff;
+	text-shadow: none;
+}
+::selection {
+	background: #3fd4cc;
+	color: #fff;
+	text-shadow: none;
+}
+
+/* .demo-tooltip ------------------------------------------------------- */
+.demo-tooltip {
+	position: relative;
+	z-index: 100;
+}
+.demo-tooltip img {
+	vertical-align: bottom;
+}
+.demo-tooltip .tooltip-content {
+	position: absolute;
+	top: 80px;
+	left: 50%;
+	margin-left: -100px;
+	padding: 0.6em;
+	border: 6px solid #3fd4cc;
+	background: #fff;
+	color: #3fd4cc;
+	box-shadow: 0 0 10px hsla(0,0%,0%,.25);
+}
+.demo-tooltip .tooltip-content p {
+	margin: 0;
+}
+.tooltip-content[aria-hidden="true"] {
+	display: none;
+}
+.tooltip-content[aria-hidden="false"] {
+	display: block;
+}

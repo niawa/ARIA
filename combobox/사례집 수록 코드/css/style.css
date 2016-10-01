@@ -1,0 +1,104 @@
+@charset "utf-8";
+/*! style.css © yamoo9.net, 2016 */
+/* demo basic ------------------------------------------------------- */
+body {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	min-height: 30vh;
+	margin: 5em 10em;
+	font: 100%/1.5 "Spoqa Han Sans", Sans-Serif;
+	color: #212121;
+	letter-spacing: -0.015em;
+}
+input, button {
+	font: inherit;
+	font-size: 87.5%;
+}
+
+/* .ui-combobox ------------------------------------------------------- */
+.ui-combobox-wrapper {
+	display: inline-block;
+	position: relative;
+	min-width: 15em;
+}
+.ui-combobox-wrapper [data-hidden="true"],
+.ui-combobox-wrapper [aria-hidden="true"] {
+	display: none;
+}
+.ui-combobox-wrapper .fa[data-hidden="true"],
+.ui-combobox-wrapper .fa[aria-hidden="true"] {
+	display: inline-block;
+}
+.ui-combobox-wrapper .ui-combobox-label {
+	padding: 0.625em 0;
+	padding-right: 0.3em;
+}
+.ui-combobox-wrapper .ui-combobox {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	width: 15em;
+	border: 1px solid #bababa;
+	border-radius: 4px;
+	padding: 5px 10px;
+	vertical-align: middle;
+}
+.ui-combobox-wrapper .ui-combobox:focus {
+	border: 3px solid #8fd0ff;
+}
+.ui-combobox-wrapper .ui-combobox-button {
+	cursor: pointer;
+	position: absolute;
+	z-index: 50;
+	top: 50%;
+	right: 3px;
+	margin-top: -4.5%;
+	border: none;
+	background: transparent;
+}
+.ui-combobox-wrapper:hover .ui-combobox-button,
+.ui-combobox-wrapper .ui-combobox:focus + .ui-combobox-button,
+.ui-combobox-wrapper .ui-combobox-button:focus {
+	color: #36a8fe;
+}
+.ui-combobox-wrapper .ui-combobox-list {
+	overflow: auto;
+	position: absolute;
+	z-index: 100;
+	border-radius: 0 0 4px 4px;
+	top: 2.1em;
+	right: 1px;
+	width: 80.8%;
+	height: 10em;
+	margin-top: 0;
+	margin-bottom: 0;
+	border: 1px solid #ccc;
+	padding-left: 0;
+	list-style-type: none;
+	background: #fff;
+}
+.ui-combobox-wrapper .ui-combobox-list.ui-combobox-list-up {
+	top: -10.25em;
+}
+.ui-combobox-wrapper .ui-combobox-list:focus {
+	outline: none;
+}
+.ui-combobox-wrapper .ui-combobox-list-option {
+	padding: 0.24em 1em;
+}
+.ui-combobox-wrapper .ui-combobox-list-option:hover {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	cursor: default;
+	background-color: #f8f8f9;
+	color: #36a8fe;
+}
+.ui-combobox-wrapper .ui-combobox-list-option.selected {
+	background-color: #36a8fe;
+	color: #fff;
+}

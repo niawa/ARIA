@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>라디오버튼</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script	src="./js/script.js"></script>
+</head>
+<body>
+	<h1 id="rg1_label">라디오버튼 (Radio Button)</h1>
+	<ul aria-labelledby="rg1_label" class="radiogroup" id="rg1" role="radiogroup">
+		<!-- 라디오 버튼 컨테이너 -->
+		<li aria-checked="true" class="selected" id="r1" role="radio" tabindex="0">tab 1</li> <!-- 선택된 라디오 버튼 -->
+		<li aria-checked="false" id="r2" role="radio" tabindex="-1">dialog 2</li>
+		<li aria-checked="false" id="r3" role="radio" tabindex="-1">carousel 3</li>
+	</ul>
+</body>
+</html>

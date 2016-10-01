@@ -1,0 +1,20 @@
+.visuallyHidden {
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+	position: absolute;
+	text-indent: -9999px;
+	width: 0;
+}
+.require-ico {
+	background: url('../images/ico-required.png') no-repeat 100% 50%;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	overflow: hidden;
+	line-height: 200rem;
+}
+.inputs {
+	 color: #777;
+	 opacity: 1;
+}

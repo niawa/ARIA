@@ -1,0 +1,102 @@
+@charset	"utf-8";
+/*------------------------------------*\
+	Reset CSS
+		- based Eric-Meyer's CSS Reset
+\*------------------------------------*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,main,hgroup,menu,nav,section,summary,time,mark,audio,video{
+	background:transparent;
+	margin:0;
+	padding:0;
+	border:0;
+	max-width:100%
+}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{
+	display:block
+}
+body{
+	background-color:#FAFAFA;
+	line-height:1.8;
+	font-family:'Apple SD Gothic Neo','Apple Gothic','나눔고딕','Nanum Gothic','맑은 고딕','Malgun Gothic';
+	font-size:100%
+}
+ul,ol{
+	margin-left:1.75rem
+}
+ol ol{
+	list-style-type:lower-roman
+}
+ol ol ol{
+	list-style-type:lower-alpha
+}
+blockquote,q{
+	quotes:none
+}
+pre{
+	display:inline-block
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:''
+}
+a{
+	color:inherit
+}
+ins{
+	text-decoration:none
+}
+del{
+	text-decoration:line-through
+}
+abbr[title],dfn[title]{
+	border-bottom:1px dotted;
+	cursor:help
+}
+table{
+	table-layout:fixed;
+	border-collapse:collapse;
+	border-spacing:0;
+	empty-cells:show
+}
+input,select{
+	margin:0;
+	padding:0;
+	vertical-align:middle
+}
+button{
+	font:inherit;
+	margin:0;
+	padding:0;
+	border:0;
+	background:transparent;
+	cursor:pointer
+}
+html,body{
+	height:100%;
+	min-height:100%
+}
+body{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:1em
+}
+
+ul.checkboxes {
+	 margin: 0;
+	 padding: 0;
+}
+
+li.checkbox {
+	 padding: 0;
+	 padding-left: 2em;
+	 list-style: none;
+	 width: 7em;
+		cursor:pointer;
+	margin-bottom:10px
+}
+[aria-checked="false"] {
+	 background: url('../images/checkbox-off.png') no-repeat .5em center;
+}
+
+[aria-checked="true"] {
+	 background: url('../images/checkbox-on.png') no-repeat .5em center;;
+}

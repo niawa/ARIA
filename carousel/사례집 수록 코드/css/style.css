@@ -1,0 +1,105 @@
+@charset "utf-8";
+/*! style.css © yamoo9.net, 2016 */
+/* demo basic ------------------------------------------------------- */
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	min-height: 100vh;
+}
+.readable-hidden {
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	left: -100000px;
+	width: 1px;
+	height: 1px;
+}
+
+/* .ui-carousel ------------------------------------------------------- */
+.ui-carousel {
+	position: relative;
+	overflow: hidden;
+	width: 400px;
+}
+.ui-carousel__tabpanel-wrapper {
+	position: relative;
+	width: 1200px;
+}
+.ui-carousel__tabpanel-wrapper:after,
+.ui-carousel__indicators:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.ui-carousel__tabpanel {
+	float: left;
+}
+.ui-carousel img {
+	vertical-align: middle;
+}
+.ui-carousel__indicators {
+	list-style: none;
+	padding-left: 0;
+	position: absolute;
+	z-index: 100;
+	bottom: 5%;
+	left: 50%;
+	margin-left: -30px;
+}
+.ui-carousel__indicators li {
+	float: left;
+}
+.ui-carousel__tab {
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background: #bababa;
+	border-radius: 50%;
+	transition: all 0.2s cubic-bezier(0.01, 0.35, 0, 1.01);
+}
+.ui-carousel__tab:hover,
+.ui-carousel__tab:focus {
+	transform: scale(1.5);
+}
+.ui-carousel__tab.active {
+	background: #fff;
+	transform: scale(1.7);
+}
+.ui-carousel__tab.active:hover {
+	cursor: default;
+}
+.ui-carousel__tab.active:focus {
+	background: #eaeaea;
+}
+.ui-carousel__button {
+	cursor: pointer;
+	position: absolute;
+	border: none;
+	margin: 0;
+	padding: 0;
+	top: 50%;
+	margin-top: -16px;
+	background-color: transparent;
+	font-size: 32px;
+	color: #3CF0D6;
+	transition: all 0.2s ease;
+}
+.ui-carousel__button:hover {
+	color: #fff;
+}
+.ui-carousel__button--prev {
+	left: 2.5%;
+}
+.ui-carousel__button--prev:before {
+	content: '<';
+}
+.ui-carousel__button--next {
+	right: 2.5%;
+}
+.ui-carousel__button--next:before {
+	content: '>';
+}

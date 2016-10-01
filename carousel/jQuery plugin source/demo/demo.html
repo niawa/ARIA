@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Carousel UI</title>
+	<link rel="stylesheet" href="http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/jquery.carousel.min.js"></script>
+</head>
+<body>
+	<!-- demo start -->
+	<div class="demo-carousel" data-label="캐로셀을 기술하는 제목">
+		<article data-label="캐로셀 슬라이드 레이블 1">
+			<a href="#">
+				<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 01" alt="캐로셀 슬라이드 콘텐츠 1 내용" width="400" height="240">
+			</a>
+		</article>
+		<article data-label="캐로셀 슬라이드 레이블 2">
+			<a href="#">
+				<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 02" alt="캐로셀 슬라이드 콘텐츠 2 내용" width="400" height="240">
+			</a>
+		</article>
+		<article data-label="캐로셀 슬라이드 레이블 3">
+			<a href="#">
+				<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 03" alt="캐로셀 슬라이드 콘텐츠 3 내용" width="400" height="240">
+			</a>
+		</article>
+	</div>
+	<div class="demo-carousel" data-label="캐로셀을 기술하는 제목">
+		<article data-label="캐로셀 슬라이드 레이블 1">
+			<a href="#">
+				<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 01" alt="캐로셀 슬라이드 콘텐츠 1 내용" width="400" height="240">
+			</a>
+		</article>
+		<article data-label="캐로셀 슬라이드 레이블 2">
+			<a href="#">
+				<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 02" alt="캐로셀 슬라이드 콘텐츠 2 내용" width="400" height="240">
+			</a>
+		</article>
+		<article data-label="캐로셀 슬라이드 레이블 3">
+			<a href="#">
+				<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 03" alt="캐로셀 슬라이드 콘텐츠 3 내용" width="400" height="240">
+			</a>
+		</article>
+		<article data-label="캐로셀 슬라이드 레이블 4">
+			<a href="#">
+				<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 04" alt="캐로셀 슬라이드 콘텐츠 4 내용" width="400" height="240">
+			</a>
+		</article>
+	</div>
+	<!--// demo end -->
+	<script>
+		;(function(global, $){
+			'use strict';
+
+			// 플러그인 적용
+			var $demo_carousel = $('.demo-carousel');
+			$demo_carousel.eq(0).CarouselUI({
+				'usingAria': false,
+				'duration': 2500
+			});
+			$demo_carousel.eq(1).CarouselUI({
+				'activeIndex': 1,
+				'playSlide': false
+			});
+			// 캐러셀 인스턴스 객체 참조 및 컨트롤
+			var demo_carousel_1 = $demo_carousel.eq(0).data('carouselUI');
+			var demo_carousel_2 = $demo_carousel.eq(1).data('carouselUI');
+
+			global.setTimeout(function() {
+				demo_carousel_1
+					.setAria()
+					.stop();
+			}, 2000);
+
+			global.setTimeout(function() {
+				demo_carousel_2.play(1500); // 일시적인 슬라이드 재생 설정 (마우스가 빠져나와도 더 이상 동작하지 않음)
+				// demo_carousel_2.play(1500, true); // 연속 슬라이드 재생 설정 (마우스가 빠져나오면 재생 동작)
+				console.info('캐러셀 재생 시작!');
+			}, 3000);
+
+		})(this, this.jQuery);
+	</script>
+</body>
+</html>

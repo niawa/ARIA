@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Button</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#div-btn").click(function() {
+				alert("이것은 버튼입니다.");
+			});
+			$('#div-btn').keyup(function(e) {
+				if (e.keyCode == 32) {
+					alert('스페이스바를 눌렀군요!');
+				}
+				if (e.keyCode == 13) {
+					alert('엔터키를 눌렀군요!');
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Button</h1>
+	<div class="button" id="div-btn" role="button" tabindex="0">한국어</div>
+</body>
+</html>

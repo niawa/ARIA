@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Form Label UI</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+	<!-- 헤더 영역 -->
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Form Label</a>
+			</div>
+		</div>
+	</nav><!--// 헤더 영역 -->
+	<div class="container">
+		<div class="row">
+			<!-- demo start -->
+			<form aria-live="polite" class="col-sm-12 col-md-6" id="demo_register_form" method="post" name="demo_register_form" novalidate="">
+				<div class="form-group">
+					<!-- 레이블 -->
+					<label class="control-label" for="register_id">아이디</label> <!-- 입력 시 알아야 할 정보 -->
+					<span class="text-info" id="id_info">영문자, 숫자, _ 만 입력 가능. 최소 3자이상 입력.</span> <!-- 사용자 입력 필드 -->
+					<input aria-describedby="id_info" aria-invalid="false" aria-required="true" class="form-control" id="register_id" maxlength="20" minlength="3" name="register_id" required="" type="text"> <!-- 사용자 입력 정보가 유효하지 않을 경우, 화면에 표시하고 읽어 줄 주의 정보 -->
+					<span class="help-block" id="id_error" role="alert"></span>
+				</div><!-- <button type="submit">전송</button> -->
+			</form><!--// demo End -->
+		</div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>

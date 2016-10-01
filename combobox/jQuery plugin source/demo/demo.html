@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Combobox</title>
+	<link rel="stylesheet" href="http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/jquery.combobox.min.js"></script>
+</head>
+<body>
+	<!-- demo start -->
+	<div class="demo-combo">
+		<label for="demo-combo-travel">도착지</label>
+		<input type="text" id="demo-combo-travel" placeholder="도착 지역 선택">
+	</div>
+	<!--// demo end -->
+	<script>
+		;(function(global, $){
+			'use strict';
+
+			// 플러그인 적용
+			var $demo_combo = $('.demo-combo');
+			$demo_combo.ComboboxUI({
+				// 옵션(<li>) 설정 데이터는 배열로 전달해야 함.
+				'options': '일본, 중국, 동남아시아/인도, 미주(북/남미), 유럽, 대양주/괌, 러시아/몽골/중앙아시아, 중동/아프리카'.split(', ')
+			});
+			// 콤보박스 인스턴스 객체 참조 및 컨트롤
+			var demo_combo = $demo_combo.data('comboboxUI');
+			demo_combo
+				// WAI-ARIA 설정 해제
+				.desetAria()
+				// 초기 옵션 값 설정
+				.selectOption(1);
+			// 2초 뒤에 WAI-ARIA 설정
+			global.setTimeout(function() {
+				demo_combo.setAria();
+			}, 2000);
+
+		})(this, this.jQuery);
+	</script>
+</body>
+</html>

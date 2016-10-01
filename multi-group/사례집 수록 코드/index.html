@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>multi form group example</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<h1>
+		multi form group example
+	</h1>
+	<div class="wrap">
+		<form action="#" name="frm" id="frm" method="post">
+			<span id="order-info" class="form-legend">주문자 정보</span>
+			<div class="field" role="group" aria-labelledby="order-info">
+				<div class="field-item">
+					<label for="usr-name" class="label">이름</label>
+					<input type="text" name="usr-name" id="usr-name">
+				</div>
+				<div class="field-item" role="group" aria-labelledby="label-tel">
+					<span class="label" id="label-tel">전화번호</span>
+					<input type="text" name="usr-tel-1" id="usr-tel-1" aria-label="국번"> -
+					<input type="text" name="usr-tel-2" id="usr-tel-2" aria-label="가운데 자리"	> -
+					<input type="text" name="usr-tel-3" id="usr-tel-3" aria-label="마지막 자리"	>
+				</div>
+				<div class="field-item">
+					<label for="usr-email">이메일</label>
+					<input type="text" name="usr-email" id="usr-email">
+				</div>
+			</div>
+			<span id="delivery-info" class="form-legend">배송지 정보</span>
+			<div class="field" role="group" aria-labelledby="delivery-info">
+				<div class="field-item">
+					<label for="deliver-name" class="label">이름</label>
+					<input type="text" name="deliver-name" id="deliver-name">
+				</div>
+				<div class="field-item" role="group" aria-labelledby="label-tel2">
+					<span class="label" id="label-tel2">전화번호</span>
+					<input type="text" name="deliver-tel-1" id="deliver-tel-1" aria-label="국번"> -
+					<input type="text" name="deliver-tel-2" id="deliver-tel-2" aria-label="가운데 자리"	> -
+					<input type="text" name="deliver-tel-3" id="deliver-tel-3" aria-label="마지막 자리"	>
+				</div>
+				<div class="field-item" role="group" aria-labelledby="label-addr">
+					<span class="label" id="label-addr">배송지 주소</span>
+					<input type="text" name="deliver-post" id="deliver-post" aria-label="우편번호">
+					<input type="text" name="deliver-addr" id="deliver-addr" aria-label="상세 주소">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

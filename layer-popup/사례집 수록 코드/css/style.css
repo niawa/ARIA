@@ -1,0 +1,12 @@
+.layer_area {
+	position : absolute;
+	left : 100px;
+	top :100px;
+	background : #fff;
+	padding : 20px;
+	border : 4px solid #ddd;
+		
+}
+div[aria-hidden='true'] {
+	display: none;
+}

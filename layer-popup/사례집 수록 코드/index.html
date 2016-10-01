@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Layer Popup</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div><a href="#">링크1</a></div>
+	<div><a href="#">링크2</a></div>
+	<div><a href="#">링크3</a></div>
+	<div>
+		<a href="#" id="layer_open">팝업창열기</a>
+	</div>
+	<div class="layer_area" id="layer" aria-hidden="true" role="dialog" aria-labelledby="dialogTitle">
+		<h1 id="dialogTitle" tabindex="0">레이업 팝업</h1>
+		<ol>
+			<li>팝업창에 포커스이동</li>
+			<li>탭키 사용시 순환적 이동</li>
+			<li>ESC키/닫기버튼 사용시 팝업종료</li>
+			<li>팝업종료시 포커스 이동</li>
+		</ol>
+		<div>
+			<input type="button" value="닫기" id="layer_close">
+		</div>
+	</div>
+	<div><a href="#">링크4</a></div>
+	<div><a href="#">링크5</a></div>
+</body>
+</html>
