@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Tab UI</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style-before.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/script-before.js"></script>
+</head>
+<body>
+	<h1>
+		Tab UI
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2>WAI-ARIA 미 적용</h2>
+			<div class="tab-interface">
+				<!-- 탭 인덱스 -->
+				<ul class="tab-list" role="tablist">
+					<li id="tab1" role="tab" aria-controls="section1" aria-selected="true" tabindex="0">HTML</li>
+					<li id="tab2" role="tab" aria-controls="section2" aria-selected="false" tabindex="0">CSS</li>
+					<li id="tab3" role="tab" aria-controls="section3" aria-selected="false" tabindex="0">Javascrip</li>
+				</ul>
+				<!-- 탭 콘텐츠 -->
+				<div class="tab-contents">
+					<section id="section1" role="tabpanel" aria-labelledby="tab1">
+						<p>
+							HTML은 하이퍼텍스트 마크업 언어(HyperText Markup Language)
+							라는 의미의 웹 페이지를 위한 마크업 언어이다.
+						</p>
+						<a href="#">상세 보기</a>
+					</section>
+					<section id="section2" class="unvisual" role="tabpanel" aria-labelledby="tab2">
+						<p>
+							캐스케이딩 스타일 시트(Cascading Style Sheets, CSS)는 마크업 언어가
+							실제 표시되는 방법을 기술하는 언어로, HTML과 XHTML에 주로 쓰이며,
+							XML에서도 사용할 수 있다.
+						</p>
+						<a href="#">상세 보기</a>
+					</section>
+					<section id="section3" class="unvisual" role="tabpanel" aria-labelledby="tab3">
+						<p>
+							자바스크립트(JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다.
+							이 언어는 웹브라우저 내에서 주로 사용하며,
+							다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다.
+						</p>
+						<a href="#">상세 보기</a>
+					</section>
+				</div>
+			</div>
+			<a href="#">copyright</a>
+		</div>
+
+		<div class="column-02">
+			<h2>WAI-ARIA 적용</h2>
+			<div class="tab-interface">
+				<!-- 탭 인덱스 -->
+				<ul class="tab-list-before">
+					<li id="tab1-before" tabindex="0" data-controls="section1-before" class="selectedItem">HTML</li>
+					<li id="tab2-before" tabindex="0" data-controls="section2-before" >CSS</li>
+					<li id="tab3-before" tabindex="0" data-controls="section3-before">Javascrip</li>
+				</ul>
+				<!-- 탭 콘텐츠 -->
+				<div class="tab-contents">
+					<section id="section1-before">
+						<p>
+							HTML은 하이퍼텍스트 마크업 언어(HyperText Markup Language)
+							라는 의미의 웹 페이지를 위한 마크업 언어이다.
+						</p>
+						<a href="#">상세 보기</a>
+					</section>
+					<section id="section2-before" class="unvisual">
+						<p>
+							캐스케이딩 스타일 시트(Cascading Style Sheets, CSS)는 마크업 언어가
+							실제 표시되는 방법을 기술하는 언어로, HTML과 XHTML에 주로 쓰이며,
+							XML에서도 사용할 수 있다.
+						</p>
+						<a href="#">상세 보기</a>
+					</section>
+					<section id="section3-before" class="unvisual">
+						<p>
+							자바스크립트(JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다.
+							이 언어는 웹브라우저 내에서 주로 사용하며,
+							다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다.
+						</p>
+						<a href="#">상세 보기</a>
+					</section>
+				</div>
+			</div>
+			<a href="#">copyright</a>
+		</div>
+	</div>
+</body>
+</html>

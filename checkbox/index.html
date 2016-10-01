@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkbox</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
+</head>
+<body>
+	<h1>Checkbox Example</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2>WAI-ARIA 미 적용</h2>
+			<ul class="checkboxes2">
+				<li class="checkbox2" data-class="nocheck" id="cb1a2"><span>HANJK</span></li>
+				<li class="checkbox2" data-class="check" id="cb1b2"><span>KIMDRS</span></li>
+				<li class="checkbox2" data-class="check" id="cb1c2"><span>SUNGYH</span></li>
+				<li class="checkbox2" data-class="check" id="cb1d2"><span>YAM</span></li>
+				<li class="checkbox2" data-class="check" id="cb1e2"><span>JISB</span></li>
+				<li class="checkbox2" data-class="check" id="cb1f2"><span>KIMBJ</span></li>
+			</ul>
+		</div>
+
+		<div class="column-02">
+			<h2 id="h1aria">WAI-ARIA 적용</h2>
+			<ul aria-labelledby="h1aria" class="checkboxes" role="group">
+				<li aria-checked="false" class="checkbox" id="cb1a" role="checkbox" tabindex="0"><span>HANJK</span></li>
+				<li aria-checked="true" class="checkbox" id="cb1b" role="checkbox" tabindex="0"><span>KIMDRS</span></li>
+				<li aria-checked="true" class="checkbox" id="cb1c" role="checkbox" tabindex="0"><span>SUNGYH</span></li>
+				<li aria-checked="true" class="checkbox" id="cb1d" role="checkbox" tabindex="0"><span>YAM</span></li>
+				<li aria-checked="true" class="checkbox" id="cb1e" role="checkbox" tabindex="0"><span>JISB</span></li>
+				<li aria-checked="true" class="checkbox" id="cb1f" role="checkbox" tabindex="0"><span>KIMBJ</span></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

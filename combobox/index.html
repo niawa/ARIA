@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Combobox UI Example</title>
+	<link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/combobox.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/jquery.combobox.min.js"></script>
+</head>
+<body>
+	<h1>
+		Combobox UI Example
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2 id="non-wai-aria">WAI-ARIA 미 적용</h2>
+			<div class="demo-combo">
+				<label for="demo-combo-travel">도착지</label>
+				<input type="text" id="demo-combo-travel" placeholder="도착 지역 선택">
+			</div>
+		</div>
+
+		<div class="column-02">
+			<h2 id="apply-wai-aria">WAI-ARIA 적용</h2>
+			<div class="demo-combo">
+				<label for="demon-combo-travel">도착지</label>
+				<input type="text" id="demon-combo-travel" placeholder="도착 지역 선택">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		;(function(global, $){
+			'use strict';
+
+			// 데모 요소 모두에 플러그인 적용
+			var $demo_combo = $('.demo-combo');
+			$demo_combo.ComboboxUI({
+				'options': '일본, 중국, 동남아시아/인도, 미주(북/남미), 유럽, 대양주/괌, 러시아/몽골/중앙아시아, 중동/아프리카'.split(', ')
+			});
+			// 데모 중 첫번째 요소에 WAI-ARIA 미적용
+			var demo_combo = $demo_combo.eq(0).data('comboboxUI');
+			// WAI-ARIA 설정 해제
+			demo_combo.desetAria();
+
+		})(this, this.jQuery);
+	</script>
+</body>
+</html>

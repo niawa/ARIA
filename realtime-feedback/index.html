@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>real-time validation example</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<h1>
+		real-time validation example
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2 id="non-wai-aria">WAI-ARIA 미 적용</h2>
+			<form action="#" name="frm1" id="frm1" method="post">
+				<fieldset>
+					<legend class="hidden-accessible">기본 정보</legend>
+					<div class="field">
+						<label for="usrId">아이디</label>
+						<input type="text" name="usrId" id="usrId">
+						<div class="alert"></div>
+					</div>
+					<div class="field">
+						<label for="usrPwd">비밀번호</label>
+						<input type="password" name="usrPwd" id="usrPwd">
+						<div class="alert"></div>
+					</div>
+					<div class="field">
+						<label for="reUsrPwd">비밀번호 확인</label>
+						<input type="password" name="reUsrPwd" id="usrPwdRe" data-origin="usrPwd">
+						<div class="alert"></div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+		<div class="column-02">
+			<h2 id="apply-wai-aria">WAI-ARIA 적용</h2>
+			<form action="#" name="frm2" id="frm2" method="post">
+				<fieldset>
+					<legend class="hidden-accessible">기본 정보</legend>
+					<div class="field">
+						<label for="usrId2">아이디</label>
+						<input type="text" name="usrId2" id="usrId2">
+						<div class="alert" role="alert"></div>
+					</div>
+					<div class="field">
+						<label for="usrPwd2">비밀번호</label>
+						<input type="password" name="usrPwd2" id="usrPwd2">
+						<div class="alert" role="alert"></div>
+					</div>
+					<div class="field">
+						<label for="reUsrPwd2">비밀번호 확인</label>
+						<input type="password" name="reUsrPwd2" id="reUsrPwd2" data-origin="usrPwd2">
+						<div class="alert" role="alert"></div>
+					</div>
+				</fieldset>
+			</form>
+			<p class="author-descript">
+				※ 본 예제에서는 이미 등록된 아이디로 'mulder21c'가,
+				사용 불가한 아이디로 'admin'가 사전 정의되어 있습니다.
+			</p>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="./js/zxcvbn.js"></script>
+	<script>
+		(function($){
+			// 사용자의 키 입력 중 수시로 추천 검색어를 가져오는 것을 방지하기 위한 타이머
+			var tm = null;
+			// 처음 입력 값 캐시를 위한 변수
+			var orgVal = '';
+
+			// 피드백 메세지 정의
+			var feedbackMsg = {
+				'duplicated' : '이미 사용 중인 아이디입니다.',
+				'blocked' : '사용 불가한 아이디 입니다.',
+				'passed' : '사용 가능한 아이디 입니다.',
+				'shortid' : '아이디가 너무 짧습니다',
+				'strength' : ['veryweak', 'weak', 'normal', 'strong', 'verystrong'],
+				'very-weak' : '강도 매우 취약',
+				'weak' : '강도 취약',
+				'normal' : '강도 보통',
+				'strong' : '강도 강함',
+				'very-strong' : '강도 매우 강함',
+				'same' : '비밀번호 일치',
+				'non-same' : '비밀번호 일치하지 않음'
+			};
+
+			// 피드백 메세지 노출 함수
+			function feedback(elem, feedbackCode){
+				$(elem).empty().append('<div class="' + feedbackCode + '">' + feedbackMsg[feedbackCode] + '</div>');
+			}
+
+			// ID 검증
+			$('input[name^="usrId"]').on({
+				'focus' : function(){
+					orgVal = '';
+				},
+				'keyup' : function(){
+					clearTimeout(tm);
+					var me = this;
+					// 입력된 값이 없거나, 키 입력이 끝났을 때 기존 값과 현재 값이 동일하면 검증하지 않음
+					if( me.value.trim() === '' || me.value.trim() === orgVal){
+						return;
+					}
+					tm = setTimeout(function(){
+						// ID 검증을 위한 ajax 호출
+						$.ajax({
+							url : 'https://aria.publisher.name/API/chkId.php',
+							data : { id : me.value },
+							method : 'POST',
+							dataType : 'json',
+							cache : false
+						 })
+						 .done(function(data){
+							 // 피드백 추가
+							 feedback($(me).find(' ~ .alert:eq(0)'), data['result']);
+						 })
+					}, 400);
+				}
+			});
+
+			// PWD 검증 (with zxcvbn.js)
+			// zxzxcvbn.js 의 설명은 https://github.com/dropbox/zxcvbn 를 참고.
+			$('input[name^="usrPwd"]').on({
+				'focus' : function(){
+					orgVal = '';
+				},
+				'keyup' : function(event){
+					var me = this;
+					// 입력된 값이 없거나, 키 입력이 끝났을 때 기존 값과 현재 값이 동일하면 검증하지 않음
+					if( me.value.trim() === '' || me.value.trim() === orgVal ){
+						return;
+					}
+					clearTimeout(tm);
+					tm = setTimeout(function(){
+						orgVal = me.value.trim();
+						// zxzxcvbn 결과에 따른 피드백 추가
+						feedback($(me).find(' ~ .alert:eq(0)'), feedbackMsg['strength'][zxcvbn(orgVal)['score']]);
+					}, 400);
+				}
+			});
+
+			// re-PWD 검증
+			$('input[name^="reUsrPwd"]').on({
+				'keyup' : function(event){
+					var me = this;
+					// 입력된 값이 없거나, 키 입력이 끝났을 때 기존 값과 현재 값이 동일하면 검증하지 않음
+					if( me.value.trim() === '' || me.value.trim() === orgVal ){
+						return;
+					}
+					clearTimeout(tm);
+					tm = setTimeout(function(){
+						// 비밀번호 - 비밀번호 확인 간 일치 여부에 따른 피드백 추가
+						feedback($(me).find(' ~ .alert:eq(0)'), me.value.trim() === $('#' + me.getAttribute('data-origin')).val() ? 'same' : 'non-same' );
+					}, 400);
+				}
+			});
+		})(jQuery);
+	</script>
+</body>
+</html>

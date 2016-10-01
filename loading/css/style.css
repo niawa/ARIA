@@ -1,0 +1,172 @@
+@charset "utf-8";
+/*------------------------------------*\
+	Reset CSS
+		- based Eric-Meyer's CSS Reset
+\*------------------------------------*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,main,hgroup,menu,nav,section,summary,time,mark,audio,video{
+	background:transparent;
+	margin:0;
+	padding:0;
+	border:0;
+	max-width:100%
+}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{
+	display:block
+}
+body{
+	background-color:#FAFAFA;
+	line-height:1.8;
+	font-family:'Apple SD Gothic Neo','Apple Gothic','나눔고딕','Nanum Gothic','맑은 고딕','Malgun Gothic';
+	font-size:100%
+}
+ul,ol{
+	margin-left:1.75rem
+}
+ol ol{
+	list-style-type:lower-roman
+}
+ol ol ol{
+	list-style-type:lower-alpha
+}
+blockquote,q{
+	quotes:none
+}
+pre{
+	display:inline-block
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:'';
+	content:none
+}
+a{
+	color:inherit
+}
+ins{
+	color:#000;
+	text-decoration:none
+}
+del{
+	text-decoration:line-through
+}
+abbr[title],dfn[title]{
+	border-bottom:1px dotted;
+	cursor:help
+}
+table{
+	table-layout:fixed;
+	border-collapse:collapse;
+	border-spacing:0
+}
+table,tr,th,td{
+	border-collapse:collapse;
+	border-spacing:0;
+	empty-cells:show
+}
+input,select{
+	margin:0;
+	padding:0;
+	vertical-align:middle
+}
+button{
+	font:inherit;
+	margin:0;
+	padding:0;
+	border:0;
+	background:transparent;
+	cursor:pointer
+}
+img{
+	max-width:100%
+}
+img[height]{
+	height:auto !important
+}
+em{
+	margin-right:.5em
+}
+.hidden-accessible{
+	overflow:hidden;
+	clip:rect(1px,1px,1px,1px);
+	position:absolute;
+	width:1px;
+	height:1px
+}
+.clearfix:after{
+	clear:both;
+	content:'';
+	display:table;
+	height:0;
+	overflow:hidden;
+	visibility:hidden
+}
+.fix-justify:before{
+	content:'';
+	display:inline-block;
+	width:100%;
+	height:0;
+	overflow:hidden
+}
+html,body{
+	height:100%;
+	min-height:100%
+}
+body{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:1em
+}
+/*------------------------------------*\
+	Example's Layout
+\*------------------------------------*/
+.wrap{
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	margin-top:1em;
+	height:80%
+}
+[class^="column-"]{
+	-webkit-flex:1;
+	flex:1;
+	padding:0 2em 0 2em
+}
+[class^="column-"]:first-child{
+	border-right:2px solid #ccc
+}
+
+.wrap-back-loading{/* 배경 처리*/
+	 width: 100%;
+	 height: 100%;
+	 top: 0px;
+	 left: 0px;
+	 position: fixed;
+	 display: block;
+	 opacity: 0.2;
+	 background-color: #626262;
+	 padding : 10px 10px;
+	 z-index: 99;
+
+}
+.wrap-loading{ /*로딩 화면 처리*/
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:260px;
+	height:120px;
+	margin:-70px -140px -70px -140px;
+	padding : 10px 10px;
+	background-color: #ffff80;
+	border : 1px solid black;
+
+}
+.display-none{ /*감추기*/
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+	position: absolute;
+	text-indent: -9999px;
+	width: 0;
+}

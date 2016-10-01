@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Tooltip UI Example</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/tooltip.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+<body>
+	<h1>
+		Tooltip UI Example
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2 id="non-wai-aria">WAI-ARIA 미 적용</h2>
+			<div class="demo-tooltip demo-no-aria">
+				<a href="#" target="_blank" class="tooltip-btn">
+					<img src="http://placehold.it/420x124/ba3c41/1d0f0f/?text=Tooltip" alt="툴팁" width="420" height="124">
+				</a>
+				<div class="tooltip-content" data-hidden="true">
+					<p>일반 툴팁<br>사용자 접근성이 높지 않습니다.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="column-02">
+			<h2 id="apply-wai-aria">WAI-ARIA 적용</h2>
+			<div class="demo-tooltip demo-aria">
+				<a href="#" target="_blank" class="tooltip-btn" aria-describedby="notice-tip">
+					<img src="http://placehold.it/420x124/52c88c/13271d/?text=WAI-ARIA Tooltip" alt="WAI-ARIA 툴팁" width="420" height="124">
+				</a>
+				<div id="notice-tip" class="tooltip-content" role="tooltip" aria-hidden="true">
+					<p>WAI-ARIA 툴팁!<br>사용자 접근성을 높여줍니다.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/tooltip.min.js"></script>
+</body>
+</html>

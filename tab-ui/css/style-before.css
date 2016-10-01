@@ -1,0 +1,46 @@
+
+.tab-list-before{
+	padding-left: 0;
+	margin: 0;
+}
+.tab-list-before:after{
+	display: block;
+	clear: both;
+	content: "";
+}
+.tab-list-before li {
+	float: left;
+	list-style: none;
+}
+.tab-list-before li{
+	display: block;
+	background: #999;
+	color: #fff;
+	border: 2px solid #999;
+	border-bottom: 0;
+	padding: 10px;
+	margin-right: 5px;
+	border-radius: 10px 10px 0 0;
+	text-decoration: none;
+	position: relative;
+	top: 2px;
+}
+
+.tab-contents{
+	margin-top: 0;
+	padding: 15px;
+	border: 2px solid #aaa;
+	z-index: 5;
+}
+.tab-contents h1{
+	font-size: 1.3em;
+}
+
+.selectedItem{
+	background: #fff !important;
+	color: #aaa !important;
+	font-weight: bold;
+}
+.unvisual{
+	display: none;
+}

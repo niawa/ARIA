@@ -1,0 +1,170 @@
+@charset "utf-8";
+/*------------------------------------*\
+	Reset CSS
+		- based Eric-Meyer's CSS Reset
+\*------------------------------------*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,main,hgroup,menu,nav,section,summary,time,mark,audio,video{
+	background:transparent;
+	margin:0;
+	padding:0;
+	border:0;
+	max-width:100%
+}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{
+	display:block
+}
+body{
+	background-color:#FAFAFA;
+	line-height:1.8;
+	font-family:'Apple SD Gothic Neo','Apple Gothic','나눔고딕','Nanum Gothic','맑은 고딕','Malgun Gothic';
+	font-size:100%
+}
+ul,ol{
+	margin-left:1.75rem
+}
+ol ol{
+	list-style-type:lower-roman
+}
+ol ol ol{
+	list-style-type:lower-alpha
+}
+blockquote,q{
+	quotes:none
+}
+pre{
+	display:inline-block
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:'';
+	content:none
+}
+a{
+	color:inherit
+}
+ins{
+	color:#000;
+	text-decoration:none
+}
+del{
+	text-decoration:line-through
+}
+abbr[title],dfn[title]{
+	border-bottom:1px dotted;
+	cursor:help
+}
+table{
+	table-layout:fixed;
+	border-collapse:collapse;
+	border-spacing:0
+}
+table,tr,th,td{
+	border-collapse:collapse;
+	border-spacing:0;
+	empty-cells:show
+}
+input,select{
+	margin:0;
+	padding:0;
+	vertical-align:middle
+}
+button{
+	font:inherit;
+	margin:0;
+	padding:0;
+	border:0;
+	background:transparent;
+	cursor:pointer
+}
+img{
+	max-width:100%
+}
+img[height]{
+	height:auto !important
+}
+em{
+	margin-right:.5em
+}
+.hidden-accessible{
+	overflow:hidden;
+	clip:rect(1px,1px,1px,1px);
+	position:absolute;
+	width:1px;
+	height:1px
+}
+.clearfix:after{
+	clear:both;
+	content:'';
+	display:table;
+	height:0;
+	overflow:hidden;
+	visibility:hidden
+}
+.fix-justify:before{
+	content:'';
+	display:inline-block;
+	width:100%;
+	height:0;
+	overflow:hidden
+}
+html,body{
+	height:100%;
+	min-height:100%
+}
+body{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:1em
+}
+/*------------------------------------*\
+	Example's Layout
+\*------------------------------------*/
+.wrap{
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	margin-top:1em;
+	height:80%
+}
+[class^="column-"]{
+	-webkit-flex:1;
+	flex:1;
+	padding:0 2em 0 2em
+}
+[class^="column-"]:first-child{
+	border-right:2px solid #ccc
+}
+
+fieldset{
+	padding-top:2em;
+}
+div.field{
+	padding:.5em 0;
+	font-size:18px;
+}
+div.field label{
+	display:inline-block;
+	padding-right:50px;
+	width:150px;
+	text-align:center
+}
+div.field input{
+	border:1px solid #999;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	padding:0 .5em;
+	line-height:1.8;
+	font-size:18px;
+}
+.alert{display:inline-block;margin-left:1em;font-size:14px;font-weight:bold;vertical-align:middle}
+.alert .duplicated, .alert .blocked, .alert .very-weak, .alert .weak, .alert .non-same{color:#f00}
+.alert .passed, .alert .valid, .alert .strong, .alert .very-strong, .alert .same{color:#07c41d}
+.alert .normal{color:#000}
+
+.author-descript{
+	margin-top:3em;
+	white-space:pre-line;
+}

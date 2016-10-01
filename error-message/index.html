@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Error Message</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="./js/script.js"></script>
+</head>
+<body>
+	<h1>Error Message Example</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2>WAI-ARIA 미 적용</h2>
+			<div>
+				<label for="fname2">
+					성 <span aria-hidden="true">*</span>
+					<span class="offscreen">필수입력항목</span>
+				</label>
+				<input id="fname2" type="text">
+				<div class="error2" id="error-text2"></div>
+			</div>
+			<button class="btn2">Confirm</button>
+		</div>
+
+		<div class="column-02">
+			<h2>WAI-ARIA 적용</h2>
+			<div>
+				<label for="fname">
+					성 <span aria-hidden="true">*</span>
+					<span class="offscreen">필수입력항목</span>
+				</label>
+				<input id="fname" type="text">
+				<div class="error" id="error-text"></div>
+			</div>
+			<button class="btn">Confirm</button>
+		</div>
+	</div>
+</body>
+</html>

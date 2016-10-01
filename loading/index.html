@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Loading</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h1>
+		Loading
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2>WAI-ARIA 미적용</h2>
+			<div id="main-before">
+				<a href='#' id='test-before'>이동</a>
+			</div>
+			<div id='loading-before'>
+			</div>
+		</div>
+
+		<div class="column-02">
+			<h2>WAI-ARIA 적용</h2>
+			<div id="main">
+				<a href='#' id='test'>이동</a>
+			</div>
+			<div id='loading' role='alert'>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

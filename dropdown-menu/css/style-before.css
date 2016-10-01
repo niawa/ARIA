@@ -1,0 +1,62 @@
+.nav-before {
+	float: left;
+	margin: 20px 0;
+}
+
+.nav-before ul {
+	position: absolute;
+	top: 2.5em;
+	left: -9999px;
+	opacity: 0;
+	transition: 0.1s linear opacity;
+	min-width: 150px;
+}
+
+.nav-before li {
+	float: left;
+	position: relative;
+}
+
+.nav-before li > a {
+	float: left;
+	padding: 10px 15px;
+	text-decoration: none;
+}
+
+.nav-before li > a:hover,
+.nav-before li > a:focus,
+.nav-before li:focus > a,
+.nav-before li:hover > a {
+	background: #EFEFEF;
+	outline: 0;
+}
+
+.nav-before li:hover ul,
+.nav-before li:focus ul,
+ul.show-menu-before {
+	left: 0;
+	opacity: 0.99;
+}
+
+.nav-before ul li {
+	float: none;
+	position: static;
+}
+
+.nav-before ul a {
+	float: none;
+	display: block;
+	font-size: 12px;
+	text-shadow: none;
+	transition: 0.1s linear all;
+}
+
+.nav-before ul a:hover,
+.nav-before ul a:focus {
+	text-shadow: none;
+}
+.list-reset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

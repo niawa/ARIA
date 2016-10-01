@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Carousel UI Example</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="css/carousel.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/jquery.carousel.min.js"></script>
+</head>
+<body>
+	<h1>
+		Carousel UI Example
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2 id="non-wai-aria">WAI-ARIA 미 적용</h2>
+			<div class="demo-carousel" data-label="캐로셀을 기술하는 제목">
+				<article data-label="캐로셀 슬라이드 레이블 1">
+					<a href="#">
+						<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 01" alt="캐로셀 슬라이드 콘텐츠 1 내용" width="400" height="240">
+					</a>
+				</article>
+				<article data-label="캐로셀 슬라이드 레이블 2">
+					<a href="#">
+						<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 02" alt="캐로셀 슬라이드 콘텐츠 2 내용" width="400" height="240">
+					</a>
+				</article>
+				<article data-label="캐로셀 슬라이드 레이블 3">
+					<a href="#">
+						<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 03" alt="캐로셀 슬라이드 콘텐츠 3 내용" width="400" height="240">
+					</a>
+				</article>
+			</div>
+		</div>
+
+		<div class="column-02">
+			<h2 id="apply-wai-aria">WAI-ARIA 적용</h2>
+			<div class="demo-carousel" data-label="캐로셀을 기술하는 제목">
+				<article data-label="캐로셀 슬라이드 레이블 1">
+					<a href="#">
+						<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 01" alt="캐로셀 슬라이드 콘텐츠 1 내용" width="400" height="240">
+					</a>
+				</article>
+				<article data-label="캐로셀 슬라이드 레이블 2">
+					<a href="#">
+						<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 02" alt="캐로셀 슬라이드 콘텐츠 2 내용" width="400" height="240">
+					</a>
+				</article>
+				<article data-label="캐로셀 슬라이드 레이블 3">
+					<a href="#">
+						<img src="http://placehold.it/400x240/16a085/fff/?text=Slide 03" alt="캐로셀 슬라이드 콘텐츠 3 내용" width="400" height="240">
+					</a>
+				</article>
+			</div>
+		</div>
+	</div>
+	<script>
+		;(function(global, $){
+			'use strict';
+
+			// 플러그인 적용
+			var $demo_carousel = $('.demo-carousel');
+			$demo_carousel.eq(0).CarouselUI({
+				'usingAria': false,
+				'playSlide': false
+			});
+			$demo_carousel.eq(1).CarouselUI({
+				'playSlide': false
+			});
+		})(this, this.jQuery);
+	</script>
+</body>
+</html>

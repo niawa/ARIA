@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Page Navigator UI Example</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/page-navi.min.css">
+</head>
+<body>
+	<h1>
+		Page Navigator UI Example
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2 id="non-wai-aria">WAI-ARIA 미 적용</h2>
+			<div>
+				<ul class="pagination">
+					<li>
+						<a id="pgn-a-prev" href="..." title="이전 페이지" class="ui-pgn-prev">
+							<em class="readable-hidden">이전 페이지</em>
+							<span>&laquo;</span>
+						</a>
+					</li>
+					<li>
+						<a id="pgn-a-1" href="#"><span>1</span></a>
+					</li>
+					<li>
+						<a id="pgn-a-2" href="#"><span>2</span></a>
+					</li>
+					<li>
+						<a id="pgn-a-3" href="#"><span>3</span></a>
+					</li>
+					<li class="active">
+						<a id="pgn-a-4" href="#">
+							<span class="readable-hidden">현재 페이지</span>
+							<span class="ui-pgn-active">4</span>
+						</a>
+					</li>
+					<li>
+						<a id="pgn-a-5" href="#"><span>5</span></a>
+					</li>
+					<li>
+						<a id="pgn-a-6" href="#"><span>6</span></a>
+					</li>
+					<li>
+						<a id="pgn-a-7" href="#"><span>7</span></a>
+					</li>
+					<li>
+						<a id="pgn-a-8" href="#"><span>8</span></a>
+					</li>
+					<li>
+						<a id="pgn-a-9" href="#"><span>9</span></a>
+					</li>
+					<li>
+						<a id="pgn-a-10" href="#"><span>10</span></a>
+					</li>
+					<li>
+						<a id="pgn-a-next" href="#" title="다음 페이지" class="ui-pgn-next">
+							<em class="readable-hidden">다음 페이지</em>
+							<span>&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="column-02">
+			<h2 id="apply-wai-aria">WAI-ARIA 적용</h2>
+			<div role="navigation" aria-label="페이지 탐색 내비게이션" class="ui-page-navigator">
+				<ul class="pagination">
+					<li class="disabled">
+						<a id="pgn-b-prev" href="..." title="이전 페이지" class="ui-pgn-prev">
+							<em class="readable-hidden">이전 페이지</em>
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li class="active">
+						<a id="pgn-b-1" href="#">
+							<span class="readable-hidden">현재 페이지</span>
+							<span>1</span>
+						</a>
+					</li>
+					<li>
+						<a id="pgn-b-2" href="#"><span>2</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-3" href="#"><span>3</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-4" href="#"><span>4</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-5" href="#"><span>5</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-6" href="#"><span>6</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-7" href="#"><span>7</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-8" href="#"><span>8</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-9" href="#"><span>9</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-10" href="#"><span>10</span></a>
+					</li>
+					<li>
+						<a id="pgn-b-next" href="#" title="다음 페이지" class="ui-pgn-next">
+							<em class="readable-hidden">다음 페이지</em>
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

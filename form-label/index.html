@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Form Label UI Example</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/form-label.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>
+		Form Label UI Example
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2 id="non-wai-aria">WAI-ARIA 미 적용</h2>
+			<form method="post" class="demo-form col-sm-12 col-md-8" id="demo_register_form_noaria" novalidate>
+				<div class="form-group">
+					<!-- 레이블 -->
+					<label for="register_id_noaria" class="control-label">아이디</label>
+					<!-- 입력 시 알아야 할 정보 -->
+					<span id="id_info_noaria" class="text-info">영문자, 숫자, _ 만 입력 가능. 최소 3자이상 입력.</span>
+					<!-- 사용자 입력 필드 -->
+					<input
+						class="form-control"
+						type="text"
+						name="register_id_noaria"
+						id="register_id_noaria"
+						minlength="3"
+						maxlength="20"
+						required>
+					<!-- 사용자 입력 정보가 유효하지 않을 경우, 화면에 표시하고 읽어 줄 주의 정보 -->
+					<span id="id_error_noaria" class="help-block"></span>
+				</div>
+				<!-- <button type="submit">전송</button> -->
+			</form>
+		</div>
+
+		<div class="column-02">
+			<h2 id="apply-wai-aria">WAI-ARIA 적용</h2>
+			<form method="post" class="demo-form col-sm-12 col-md-8" id="demo_register_form" novalidate aria-live="polite">
+				<div class="form-group">
+					<!-- 레이블 -->
+					<label for="register_id" class="control-label">아이디</label>
+					<!-- 입력 시 알아야 할 정보 -->
+					<span id="id_info" class="text-info">영문자, 숫자, _ 만 입력 가능. 최소 3자이상 입력.</span>
+					<!-- 사용자 입력 필드 -->
+					<input
+						class="form-control"
+						type="text"
+						name="register_id"
+						id="register_id"
+						minlength="3"
+						maxlength="20"
+						required
+						aria-describedby="id_info"
+						aria-required="true"
+						aria-invalid="false">
+					<!-- 사용자 입력 정보가 유효하지 않을 경우, 화면에 표시하고 읽어 줄 주의 정보 -->
+					<span role="alert" id="id_error" class="help-block"></span>
+				</div>
+				<!-- <button type="submit">전송</button> -->
+			</form>
+		</div>
+	</div>
+
+	<script src="js/form-label.min.js"></script>
+</body>
+</html>

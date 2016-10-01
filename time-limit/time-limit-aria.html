@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>time limit example</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<p class="hidden-accessible">
+		로그인 후 10분 동안 화면 이동이 없을 시 자동으로 로그아웃 되며,
+		로그아웃 1분전에 로그인연장 화면으로 전환됩니다. <br>
+		로그인 연장을 하시려면 키보드의 backspace 키를 누르시면,
+		사이트 접속시간이 연장됩니다.
+	</p>
+	<div class="wrap">
+		<h1>
+			time limit example
+		</h1>
+		<div class="contents">
+			<p>
+				다음 버튼을 클릭하시면 레이어가 열립니다.
+			</p>
+			<button type="button" id="btn-open-layer2">레이어 팝업 열기</button>
+		</div>
+		<div class="layerpop" id="popContent" role="dialog" aria-labelledby="pop-title" aria-describedby="pop-content">
+			<div class="pop-inner">
+				<img src="./images/txt_auto_logout_info.gif" alt="자동 로그아웃 안내" id="pop-title">
+				<div id="pop-content">
+					<strong>자동 로그아웃 남은시간: <em id="cntMsg">60</em>초</strong>
+					<p>고객님의 안전한 금융거래를 위해 로그인 후
+						약 10분 동안 서비스 이용이 없어
+						로그아웃 됩니다.</p>
+					<p>로그인 시간을 연장하시겠습니까?</p>
+				</div>
+				<button type="button" class="extend">연장하기</button>
+				<button type="button">로그아웃</button>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		(function($){
+			$('#btn-open-layer2').on({
+				'click' : openLayer
+			});
+
+			var stTime = null,
+				tm = null;
+			function openLayer(){
+				$('#popContent')
+					.show()
+					.attr({'tabindex' : '-1'})
+					.find(' button.extend').focus()
+					.on({
+						'keydown.focusLock' : focuslockKeyDown,
+						'keyup.focusLock' : focuslockKeyUp
+					});
+				stTime = new Date();
+				tm = setInterval(countDown, 1000);
+
+				$('.extend').on({
+					'click.timeExtend' : timeExtend
+				});
+				$(document).on({
+					'keydown.timeExtend' : function(event){
+						event = event || window.event;
+						var keycode = event.which || event.keyCode;
+						if( keycode === 8 ){
+							timeExtend();
+						}
+					}
+				});
+			}
+
+			function timeExtend(){
+				alert('시간 연장');
+				$('#popContent')
+					.hide()
+					.off('.focusLock');
+				$('.extend').off('.timeExtend');
+				$(document).off('.timeExtend');
+			}
+
+			var shiftPressed = false,
+				popup = $('#popContent').get(0),
+				firstBtn = $('#popContent button:first').get(0),
+				lastBtn = $('#popContent button:last').get(0);
+
+			function focuslockKeyUp(event){
+				event = event || window.event;
+				var keycode = event.which || event.keyCode;
+				if( event.shiftKey ){
+					shiftPressed = false;
+				}
+			}
+
+			function focuslockKeyDown(event){
+				event = event || window.event;
+				var keycode = event.which || event.keyCode;
+
+				if(event.shiftKey){
+					shiftPressed = true;
+				}
+
+				if(shiftPressed && keycode === 9 && event.target === popup){
+					event.preventDefault ? event.preventDefault() : event.returnValue = false;
+					lastBtn.focus();
+				}else if(shiftPressed && keycode === 9 && event.target === firstBtn){
+					event.preventDefault ? event.preventDefault() : event.returnValue = false;
+					popup.focus();
+				}else if(!shiftPressed && keycode === 9 && event.target === lastBtn){
+					event.preventDefault ? event.preventDefault() : event.returnValue = false;
+					popup.focus();
+				}
+			}
+
+			var limit = 60;
+			function countDown(){
+				var nowTime = new Date();
+				var remains = limit - (Math.floor((nowTime - stTime) / 1000));
+				if( remains <= 0 ){
+					clearInterval(tm);
+					alert('로그아웃');
+					location.reload();
+				}else{
+					$('#cntMsg').text(remains);
+				}
+			}
+		})(jQuery);
+	</script>
+</body>
+</html>

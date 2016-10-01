@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Dropdown Menu</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style-before.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/script-before.js"></script>
+</head>
+<body>
+	<h1>
+		Dropdown Menu
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2>WAI-ARIA 미적용</h2>
+			<nav class="menu-before" id="a11y-menu-before">
+				<ul class="nav-before level-1 list-reset">
+					<li class="has-subnav-before">
+						<a href="#academy">아카데미</a>
+						<ul class="level-2 list-reset">
+							<li><a href="#info">아카데미소개</a></li>
+							<li><a href="#history">아카데미연혁</a></li>
+							<li><a href="#manager">매니저소개</a></li>
+							<li><a href="#map">오시는길</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#academy">취업과정</a>
+						<ul class="level-2 list-reset" class="list-reset">
+							<li><a href="#strategy">국가기간전략산업</a></li>
+							<li><a href="#card">계좌제</a></li>
+							<li><a href="#core">핵심직무과정</a></li>
+							<li><a href="#jobs">취업아카데미</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#story">아카데미Story</a>
+						<ul class="level-2 list-reset" class="list-reset">
+							<li><a href="#techstory">기술스토리</a></li>
+							<li><a href="#bookstory">책스토리</a></li>
+							<li><a href="#studentstory">연수생스토리</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#customer">고객센터</a>
+						<ul class="level-2 list-reset" class="list-reset">
+							<li><a href="#notice">공지사항</a></li>
+							<li><a href="#tutor">강사모집</a></li>
+							<li><a href="#online">온라인결제</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="column-02">
+			<h2>WAI-ARIA 적용</h2>
+			<!-- Navigation -->
+			<nav class="menu" id="a11y-menu" role="navigation" aria-label="Main menu">
+				<ul class="nav level-1 list-reset" role="menubar" aria-hidden="false">
+					<li class="has-subnav" role="menuitem" aria-haspopup="true">
+						<a href="#academy">아카데미</a>
+						<ul class="level-2 list-reset" data-test="true" aria-hidden="true" role="menu">
+							<li role="menuitem"><a href="#info" tabindex="-1">아카데미소개</a></li>
+							<li role="menuitem"><a href="#history" tabindex="-1">아카데미연혁</a></li>
+							<li role="menuitem"><a href="#manager" tabindex="-1">매니저소개</a></li>
+							<li role="menuitem"><a href="#map" tabindex="-1">오시는길</a></li>
+						</ul>
+					</li>
+					<li role="menuitem" aria-haspopup="true">
+						<a href="#academy">취업과정</a>
+						<ul class="level-2 list-reset" data-test="true" aria-hidden="true" role="menu" class="list-reset">
+							<li role="menuitem"><a href="#strategy" tabindex="-1">국가기간전략산업</a></li>
+							<li role="menuitem"><a href="#card" tabindex="-1">계좌제</a></li>
+							<li role="menuitem"><a href="#core" tabindex="-1">핵심직무과정</a></li>
+							<li role="menuitem"><a href="#jobs" tabindex="-1">취업아카데미</a></li>
+						</ul>
+					</li>
+					<li role="menuitem" aria-haspopup="true">
+						<a href="#story">아카데미Story</a>
+						<ul class="level-2 list-reset" data-test="true" aria-hidden="true" role="menu" class="list-reset">
+							<li role="menuitem"><a href="#techstory" tabindex="-1">기술스토리</a></li>
+							<li role="menuitem"><a href="#bookstory" tabindex="-1">책스토리</a></li>
+							<li role="menuitem"><a href="#studentstory" tabindex="-1">연수생스토리</a></li>
+						</ul>
+					</li>
+					<li role="menuitem" aria-haspopup="true">
+						<a href="#customer">고객센터</a>
+						<ul class="level-2 list-reset" data-test="true" aria-hidden="true" role="menu" class="list-reset">
+							<li role="menuitem"><a href="#notice" tabindex="-1">공지사항</a></li>
+							<li role="menuitem"><a href="#tutor" tabindex="-1">강사모집</a></li>
+							<li role="menuitem"><a href="#online" tabindex="-1">온라인결제</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+<body>
+</html>

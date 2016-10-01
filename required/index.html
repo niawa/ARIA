@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>필수 입력 항목 example</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<h1>
+		필수 입력 항목 example
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2 id="non-wai-aria">WAI-ARIA 미 적용</h2>
+			<form action="#" name="usrInfo" id="usrInfo" method="post">
+				<fieldset>
+					<legend>
+						회원 정보를 입력해 주세요.
+						<span class="require">
+							* 표시 항목은 필수 입력 항목입니다.
+						</span>
+					</legend>
+					<ul>
+						<li>
+							<input type="text" id="userId" name="userId" maxlength="12">
+							<label for="userId">아이디 *</label>
+						</li>
+						<li>
+							<input type="text" id="userName" name="userName" maxlength="20">
+							<label for="userName">이름</label>
+						</li>
+						<li>
+							<input type="text" id="phoneNumber" name="phoneNumber" maxlength="13">
+							<label for="phoneNumber">휴대폰 번호</label>
+						</li>
+						<li>
+							<input type="password" id="userPwd" name="password" maxlength="12">
+							<label for="password">비밀번호 *</label>
+						</li>
+						<li>
+							<input type="password" id="userPwdRe" name="userPwdRe" maxlength="12">
+							<label for="userPwdRe">비밀번호 확인 *</label>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+		</div>
+
+		<div class="column-02">
+			<h2 id="apply-wai-aria">WAI-ARIA 적용</h2>
+			<form action="#" name="usrInfo" id="usrInfo" method="post">
+				<fieldset>
+					<legend>
+						회원 정보를 입력해 주세요.
+						<span class="require">
+							* 표시 항목은 필수 입력 항목입니다.
+						</span>
+					</legend>
+					<ul>
+						<li>
+							<input type="text" id="userId2" name="userId2" maxlength="12" aria-required="true">
+							<label for="userId2">아이디 *</label>
+						</li>
+						<li>
+							<input type="text" id="userName2" name="userName2" maxlength="20">
+							<label for="userName2">이름</label>
+						</li>
+						<li>
+							<input type="text" id="phoneNumber2" name="phoneNumber2" maxlength="13">
+							<label for="phoneNumber2">휴대폰 번호</label>
+						</li>
+						<li>
+							<input type="password" id="userPwd2" name="userPwd2" maxlength="12" aria-required="true">
+							<label for="userPwd2">비밀번호 *</label>
+						</li>
+						<li>
+							<input type="password" id="userPwdRe2" name="userPwdRe2" maxlength="12" aria-required="true">
+							<label for="userPwdRe2">비밀번호 확인 *</label>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		function placeholderLabel(event){
+			event = event || window.event;
+			var val = this.value.trim();
+			switch(event.type){
+				case 'focusin' :
+					$(this).removeClass('filled').addClass('active');
+					break;
+				case 'focusout' :
+					val === '' ? $(this).removeClass('active filled') : $(this).removeClass('active').addClass('filled');
+					break;
+			}
+		}
+		$('input:text, input:password').on({
+			'focusin' : placeholderLabel,
+			'focusout' : placeholderLabel
+		});
+	</script>
+</body>
+</html>

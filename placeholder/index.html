@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>PlaceHolder</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h1>
+		Placeholder
+	</h1>
+	<div class="wrap">
+		<div class="column-01">
+			<h2>WAI-ARIA 미 적용(html5 미지원 브라우저)</h2>
+			<label for="name">성명
+				<span class="require-ico">&nbsp;필수입력&nbsp;</span>
+			</label>
+			<div>
+				<input type="text" name="name-before" id="name-before" class="inputs" value="예)홍길동">
+			</div>
+		</div>
+
+		<div class="column-02">
+			<h2>WAI-ARIA 적용</h2>
+			<label for="name">성명
+				<span class="require-ico">&nbsp;필수입력&nbsp;</span>
+			</label>
+			<div>
+				<span class="visuallyHidden" id="placeholder-name">예)홍길동</span>
+				<input type="text" name="name" id="name" class="inputs" aria-describedby="placeholder-name">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
