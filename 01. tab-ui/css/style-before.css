@@ -23,22 +23,22 @@
 	border-radius: 10px 10px 0 0;
 	text-decoration: none;
 	position: relative;
-	top: 2px;
+	top: 2px;   
 }
 
 .tab-contents{
 	margin-top: 0;
 	padding: 15px;
 	border: 2px solid #aaa;
-	z-index: 5;
+	z-index: 5; 
 }
 .tab-contents h1{
 	font-size: 1.3em;
-}
+}       
 
 .selectedItem{
 	background: #fff !important;
-	color: #aaa !important;
+	color: #aaa !important;             
 	font-weight: bold;
 }
 .unvisual{

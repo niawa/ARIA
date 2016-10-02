@@ -9,7 +9,7 @@ $(document).ready(function() {
 			$(this).attr('aria-checked', 'true');
 		}
 	});
-	
+
 	// 위와 동일한 이벤트 핸들러이며 스페이스바를 동작을 위해 추가
 	$('li[role=checkbox]').keydown(function(e) {
 		// 스페이스바 키 번호 32
