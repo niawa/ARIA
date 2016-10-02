@@ -2,7 +2,7 @@ Carousel UI
 =========================
 ## 사례집 수록 코드
 
-"WAI-ARIA 사례집"에 실린 예제 코드 전문
+"예제로 살펴보는 WAI-ARIA"에 실린 예제 코드 전문
 
 쉬운 이해를 위해 절차지향적으로 작성
 
@@ -110,4 +110,4 @@ window.setTimeout(function() {
 - WAI-ARIA 해제: `.desetAria()`
 
 ### Live Demo
-[demo page](http://nia.github.io/carousel/index.html)
+[demo page](https://niawa.github.io/ARIA/20.%20carousel/index.html)

@@ -2,7 +2,7 @@ AutoComplete UI
 =========================
 ## 사례집 수록 코드
 
-"WAI-ARIA 사례집"에 실린 예제 코드 전문
+"예제로 살펴보는 WAI-ARIA"에 실린 예제 코드 전문
 
 쉬운 이해를 위해 절차지향적으로 작성
 
@@ -51,4 +51,4 @@ WAI-ARIA 사용 여부
 	default : 'active'
 ```
 ### Live Demo
-[demo page](http://mulder21c.github.io/aria-examples/autocomplete/index.html)
+[demo page](https://niawa.github.io/ARIA/02.%20autocomplete/index.html)

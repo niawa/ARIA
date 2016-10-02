@@ -2,4 +2,7 @@ Page Navigator
 =========================
 ## 사례집 수록 코드
 
-"WAI-ARIA 사례집"에 실린 예제 코드 전문
+"예제로 살펴보는 WAI-ARIA"에 실린 예제 코드 전문
+
+### Live Demo
+[demo page](https://niawa.github.io/ARIA/18.%20page-navigator/index.html)
