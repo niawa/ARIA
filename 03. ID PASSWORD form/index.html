@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<title>에러메시지</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
+</head>
+<body>
+<h1>에러메시지</h1>
+<div class="wrap">
+    <div class="column-01">
+        <h2>WAI-ARIA 미 적용</h2>
+        <div>
+			<div class="id">
+				<label for="fname">ID</label>
+				<input type="text" id="fname">
+				<div id="idcommt">5~20자의 영문 소문자, 숫자와 특수기호(_), (-)만 사용 가능합니다.</div>
+			</div>
+			<div class="pw">
+				<label for="pwpw">PW</label>
+				<input type="password" id="pwpw">
+				<div id="pwcommt">6~16자 영문 대 소문자, 숫자, 특수문자를 사용하여 입력해 주세요.</div>
+			</div>
+	    </div>
+    </div>
+	<div class="column-02">
+        <h2>WAI-ARIA 적용</h2>
+		<div class="id">
+			<label for="fname2">ID</label>
+			<input type="text" id="fname2" aria-describedby="idcommt2">
+			<div id="idcommt2">5~20자의 영문 소문자, 숫자와 특수기호(_), (-)만 사용 가능합니다.</div>
+		</div>
+		<div class="pw">
+			<label for="pwpw2">PW</label>
+			<input type="password" id="pwpw2" aria-describedby="pwcommt2">
+			<div id="pwcommt2">6~16자 영문 대 소문자, 숫자, 특수문자를 사용하여 입력해 주세요.</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>
