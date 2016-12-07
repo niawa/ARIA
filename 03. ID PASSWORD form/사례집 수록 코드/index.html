@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<title>에러메시지</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
+</head>
+</head>
+
+<body>
+	<h1>ID/PW 입력서식</h1>
+    <div class="id">
+	    <label for="fname">ID</label>
+		<input type="text" id="fname" aria-describedby="idcommt">
+		<div id="idcommt">5~20자의 영문 소문자, 숫자와 특수기호(_), (-)만 사용 가능합니다.</div>
+	</div>
+    <div class="pw">
+		<label for="pwpw">PW</label>
+		<input type="password" id="pwpw" aria-describedby="pwcommt">
+		<div id="pwcommt">6~16자 영문 대 소문자, 숫자, 특수문자를 사용하여 입력해 주세요.</div>
+	</div>
+</body>
+</html>
